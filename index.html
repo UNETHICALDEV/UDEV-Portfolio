@@ -25,13 +25,14 @@
             --bg-dark: #0a0a0f;
             --bg-darker: #050508;
             --bg-card: #0d0d12;
-            --accent-green: #00ff41;
+            --accent-gold: #F9C775;
+            --accent-purple: #6E309D;
+            --accent-red: #FC5849;
+            --accent-dark-red: #c41e14;
             --accent-cyan: #00d9ff;
-            --accent-purple: #b833ff;
-            --accent-orange: #ff6b35;
             --text-primary: #e0e0e0;
             --text-dim: #808080;
-            --border-color: rgba(0, 255, 65, 0.2);
+            --border-color: rgba(249, 199, 117, 0.25);
         }
 
         * {
@@ -65,8 +66,8 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: gridMove 20s linear infinite;
         }
@@ -94,7 +95,7 @@
         .orb-1 {
             width: 500px;
             height: 500px;
-            background: var(--accent-green);
+            background: var(--accent-purple);
             top: -200px;
             left: -200px;
             animation-delay: 0s;
@@ -103,7 +104,7 @@
         .orb-2 {
             width: 400px;
             height: 400px;
-            background: var(--accent-cyan);
+            background: var(--accent-tan);
             bottom: -100px;
             right: -100px;
             animation-delay: 7s;
@@ -112,7 +113,7 @@
         .orb-3 {
             width: 350px;
             height: 350px;
-            background: var(--accent-purple);
+            background: var(--accent-red);
             top: 50%;
             right: 10%;
             animation-delay: 14s;
@@ -162,25 +163,25 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            border: 2px solid var(--accent-green);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
             transition: all 0.3s ease;
             background: var(--bg-card);
         }
 
         .profile-pic:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
         }
 
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(20px, 3vw, 32px);
             font-weight: 900;
-            color: var(--accent-green);
+            color: var(--accent-purple);
             text-transform: uppercase;
             letter-spacing: 3px;
-            text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
         }
 
         nav {
@@ -202,9 +203,9 @@
         }
 
         nav a:hover {
-            color: var(--accent-green);
-            border-color: var(--accent-green);
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+            color: var(--accent-purple);
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 15px rgba(249, 199, 117, 0.25);
         }
 
         /* Hero Section */
@@ -219,7 +220,7 @@
             font-weight: 900;
             line-height: 1;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-gold), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -243,10 +244,11 @@
         }
 
         .platform-tag {
+            border-radius: 4px;
             padding: 8px 18px;
-            background: rgba(0, 255, 65, 0.1);
-            border: 1px solid var(--accent-green);
-            color: var(--accent-green);
+            background: rgba(110, 48, 157, 0.15);
+            border: 1px solid var(--accent-purple);
+            color: var(--accent-gold);
             font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
@@ -256,8 +258,8 @@
         }
 
         .platform-tag:hover {
-            background: rgba(0, 255, 65, 0.2);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            background: rgba(252, 88, 73, 0.2);
+            box-shadow: 0 0 20px rgba(252, 88, 73, 0.4);
         }
 
         @keyframes fadeInUp {
@@ -309,6 +311,7 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            border-radius: 10px;
         }
 
         .why-card::before {
@@ -318,7 +321,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
             transition: left 0.6s ease;
         }
 
@@ -328,8 +331,8 @@
 
         .why-card:hover {
             transform: translateY(-10px);
-            border-color: var(--accent-green);
-            box-shadow: 0 20px 60px rgba(0, 255, 65, 0.2);
+            border-color: var(--accent-purple);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
         }
 
         .why-icon {
@@ -347,7 +350,7 @@
         .why-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 24px;
-            color: var(--accent-green);
+            color: var(--accent-tan);
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -364,7 +367,7 @@
             font-size: clamp(36px, 6vw, 64px);
             font-weight: 900;
             margin-bottom: 50px;
-            color: var(--accent-green);
+            color: var(--accent-purple);
             text-transform: uppercase;
             letter-spacing: 4px;
         }
@@ -381,6 +384,7 @@
             border: 1px solid var(--border-color);
             padding: 40px;
             backdrop-filter: blur(10px);
+            border-radius: 8px;
         }
 
         .about-text p {
@@ -395,7 +399,7 @@
         }
 
         .highlight {
-            color: var(--accent-green);
+            color: var(--accent-tan);
             font-weight: 600;
         }
 
@@ -411,18 +415,19 @@
             padding: 30px;
             backdrop-filter: blur(10px);
             transition: all 0.4s ease;
+            border-radius: 8px;
         }
 
         .stat-item:hover {
             transform: translateX(10px);
-            border-color: var(--accent-green);
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
         }
 
         .stat-label {
             font-family: 'Orbitron', sans-serif;
             font-size: 14px;
-            color: var(--accent-cyan);
+            color: var(--accent-tan);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -437,14 +442,15 @@
         .solana-address {
             margin-top: 40px;
             padding: 25px;
-            background: rgba(0, 255, 65, 0.05);
-            border: 1px solid var(--accent-green);
+            background: rgba(249, 199, 117, 0.05);
+            border: 1px solid var(--accent-gold);
             backdrop-filter: blur(10px);
+            border-radius: 8px;
         }
 
         .address-label {
             font-family: 'JetBrains Mono', monospace;
-            color: var(--accent-green);
+            color: var(--accent-tan);
             font-size: 12px;
             margin-bottom: 10px;
             text-transform: uppercase;
@@ -490,12 +496,13 @@
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(10px);
+            border-radius: 12px;
         }
 
         .basecamp-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-green);
-            box-shadow: 0 20px 60px rgba(0, 255, 65, 0.2);
+            border-color: var(--accent-purple);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
         }
 
         .basecamp-image {
@@ -536,15 +543,16 @@
         .projects-empty {
             text-align: center;
             padding: 100px 40px;
-            background: linear-gradient(135deg, rgba(0, 255, 65, 0.05), rgba(0, 217, 255, 0.05));
+            background: linear-gradient(135deg, rgba(249, 199, 117, 0.05), rgba(252, 88, 73, 0.05));
             border: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
+            border-radius: 12px;
         }
 
         .projects-empty-title {
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(40px, 6vw, 72px);
-            color: var(--accent-green);
+            color: var(--accent-purple);
             margin-bottom: 30px;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -576,17 +584,18 @@
             border: 1px solid var(--border-color);
             transition: all 0.4s ease;
             backdrop-filter: blur(10px);
+            border-radius: 8px;
         }
 
         .skill-category:hover {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 40px rgba(0, 217, 255, 0.15);
+            border-color: var(--accent-purple);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.15);
             transform: translateY(-5px);
         }
 
         .skill-category h3 {
             font-family: 'Orbitron', sans-serif;
-            color: var(--accent-cyan);
+            color: var(--accent-tan);
             font-size: 20px;
             margin-bottom: 25px;
             text-transform: uppercase;
@@ -607,7 +616,7 @@
         }
 
         .skill-list li:hover {
-            color: var(--accent-green);
+            color: var(--accent-tan);
             padding-left: 30px;
         }
 
@@ -615,7 +624,7 @@
             content: '▸';
             position: absolute;
             left: 0;
-            color: var(--accent-green);
+            color: var(--accent-purple);
         }
 
         /* Footer */
@@ -638,18 +647,18 @@
         }
 
         .footer-text a {
-            color: var(--accent-green);
+            color: var(--accent-tan);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .footer-text a:hover {
-            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            text-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
         }
 
         .footer-tagline {
             font-family: 'Orbitron', sans-serif;
-            color: var(--accent-green);
+            color: var(--accent-purple);
             font-size: 18px;
             font-weight: 700;
             text-transform: uppercase;
@@ -704,12 +713,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--accent-green), var(--accent-cyan));
+            background: linear-gradient(180deg, var(--accent-red), var(--accent-gold));
             border-radius: 6px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-green));
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-red));
         }
 
         /* Smooth Scroll */
@@ -724,8 +733,8 @@
             right: 40px;
             width: 50px;
             height: 50px;
-            background: var(--accent-green);
-            border: 2px solid var(--accent-green);
+            background: var(--accent-purple);
+            border: 2px solid var(--accent-purple);
             color: var(--bg-dark);
             border-radius: 50%;
             display: flex;
@@ -738,7 +747,7 @@
             z-index: 999;
             font-size: 24px;
             font-weight: 900;
-            box-shadow: 0 5px 20px rgba(0, 255, 65, 0.3);
+            box-shadow: 0 5px 20px rgba(249, 199, 117, 0.25);
         }
 
         .scroll-top.visible {
@@ -748,16 +757,17 @@
 
         .scroll-top:hover {
             background: var(--bg-dark);
-            color: var(--accent-green);
+            color: var(--accent-tan);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
         }
 
         /* Copy Button */
         .copy-btn {
+            border-radius: 6px;
             margin-top: 15px;
             padding: 12px 24px;
-            background: var(--accent-green);
+            background: var(--accent-purple);
             color: var(--bg-dark);
             border: none;
             cursor: pointer;
@@ -770,8 +780,8 @@
         }
 
         .copy-btn:hover {
-            background: var(--accent-cyan);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+            background: var(--accent-tan);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
             transform: translateY(-2px);
         }
 
@@ -840,6 +850,7 @@
                             <p><span class="highlight">You'll know when it's mine.</span></p>
                             <p>First few might not even run. That's fine. I'm here to stay.</p>
                             <p>If something works, I'll lean into it. If it doesn't, it dies.</p>
+                            <p style="margin-top: 30px; color: var(--accent-gold); font-weight: 600;">When we drop the Discord, this will all make sense. I'm not sitting on some high horse. I'm gonna help and be there.</p>
                         </div>
                         
                         <div class="solana-address">
@@ -928,9 +939,9 @@
                 
                 <div class="basecamp-grid">
                     <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/cd0b8d06-3bba-441e-816a-bd606ad1a1fb" alt="Basecamp at night" class="basecamp-image">
+                        <img src="https://github.com/user-attachments/assets/0acb85cd-ece2-4463-ba27-8f2f9ec90bc9" alt="Basecamp at night" class="basecamp-image">
                         <div class="basecamp-content">
-                            <h3 class="basecamp-title" style="color: var(--accent-green);">Night Mode</h3>
+                            <h3 class="basecamp-title" style="color: var(--accent-gold);">Night Mode</h3>
                             <p class="basecamp-description">This is when we roll. When the real work happens. Building, testing, deploying. The grind. No distractions, just focus and code.</p>
                         </div>
                     </div>
@@ -954,7 +965,7 @@
                     <div class="basecamp-card">
                         <img src="https://github.com/user-attachments/assets/5725e960-790f-42dc-b492-e7c1f52d9b82" alt="Sunrise" class="basecamp-image">
                         <div class="basecamp-content">
-                            <h3 class="basecamp-title" style="color: var(--accent-orange);">Sunrise</h3>
+                            <h3 class="basecamp-title" style="color: var(--accent-red);">Sunrise</h3>
                             <p class="basecamp-description">After a long night of building. Watching it come up. Reset. Do it again. The cycle continues.</p>
                         </div>
                     </div>
@@ -972,7 +983,7 @@
                         I'm gonna start deploying stuff openly and let the market decide.<br>
                         First few might not even run. That's fine.<br><br>
                         You'll know when it's mine.<br><br>
-                        Watch this space. Or follow on <a href="https://x.com/unethicaldev" style="color: var(--accent-green); text-decoration: none;">X</a>.
+                        Watch this space. Or follow on <a href="https://x.com/unethicaldev" style="color: var(--accent-gold); text-decoration: none;">X</a>.
                     </p>
                 </div>
             </div>
@@ -1050,10 +1061,10 @@
                 const btn = event.target;
                 const originalText = btn.textContent;
                 btn.textContent = 'Copied!';
-                btn.style.background = 'var(--accent-cyan)';
+                btn.style.background = 'var(--accent-tan)';
                 setTimeout(() => {
                     btn.textContent = originalText;
-                    btn.style.background = 'var(--accent-green)';
+                    btn.style.background = 'var(--accent-purple)';
                 }, 2000);
             }).catch(err => {
                 alert('Failed to copy address');
