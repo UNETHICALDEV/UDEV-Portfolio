@@ -374,9 +374,22 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 350px 1fr;
             gap: 60px;
             align-items: start;
+        }
+
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .about-logo {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 0 30px rgba(249, 199, 117, 0.3);
         }
 
         .about-text {
@@ -427,7 +440,7 @@
         .stat-label {
             font-family: 'Orbitron', sans-serif;
             font-size: 14px;
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -670,6 +683,11 @@
             .about-content {
                 grid-template-columns: 1fr;
             }
+
+            .about-left {
+                max-width: 350px;
+                margin: 0 auto;
+            }
             
             .basecamp-grid {
                 grid-template-columns: 1fr;
@@ -839,6 +857,16 @@
             <div class="container">
                 <h2 class="section-title">About the Dev</h2>
                 <div class="about-content">
+                    <div class="about-left">
+                        <img src="https://github.com/user-attachments/assets/7d58c6c6-51c4-4100-a995-42e4fe06ec95" alt="Unethical Dev Logo" class="about-logo">
+                        
+                        <div class="solana-address">
+                            <div class="address-label">Solana Address</div>
+                            <div class="address-value" id="solana-addr">ApS6Rz8osY5JWovvu29NseEUtXF99oZkvQHaBPHXPz3L</div>
+                            <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+                        </div>
+                    </div>
+
                     <div>
                         <div class="about-text">
                             <p>I didn't start in crypto.</p>
@@ -850,32 +878,26 @@
                             <p><span class="highlight">You'll know when it's mine.</span></p>
                             <p>First few might not even run. That's fine. I'm here to stay.</p>
                             <p>If something works, I'll lean into it. If it doesn't, it dies.</p>
-                            <p style="margin-top: 30px; color: var(--accent-gold); font-weight: 600;">When we drop the Discord, this will all make sense. I'm not sitting on some high horse. I'm gonna help and be there.</p>
+                            <p style="margin-top: 30px; color: var(--accent-gold); font-weight: 600;">When we drop the Discord, this will all make sense. I'm not sitting on some high horse. I'm gonna help and be there. We'll aim to do one drop a week, maybe even two. You'll know.</p>
                         </div>
-                        
-                        <div class="solana-address">
-                            <div class="address-label">Solana Address</div>
-                            <div class="address-value" id="solana-addr">ApS6Rz8osY5JWovvu29NseEUtXF99oZkvQHaBPHXPz3L</div>
-                            <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
-                        </div>
-                    </div>
 
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-label">Current Focus</div>
-                            <div class="stat-value">Building on Solana. Deploying on Pump.fun, working with Bonk ecosystem, learning everything else.</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Philosophy</div>
-                            <div class="stat-value">Ship fast. Let the market decide. No BS marketing. Code speaks louder.</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Background</div>
-                            <div class="stat-value">Ex-big tech. Fired more than once. Saw how the system works. Chose raw over polished.</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Status</div>
-                            <div class="stat-value">Just starting. Nothing deployed yet. Building the foundation at basecamp.</div>
+                        <div class="about-stats" style="margin-top: 40px;">
+                            <div class="stat-item">
+                                <div class="stat-label">Current Focus</div>
+                                <div class="stat-value">Building on Solana. Deploying on Pump.fun, working with Bonk ecosystem, learning everything else.</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Philosophy</div>
+                                <div class="stat-value">Ship fast. Let the market decide. No BS marketing. Code speaks louder.</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Background</div>
+                                <div class="stat-value">Ex-big tech. Fired more than once. Saw how the system works. Chose raw over polished.</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Status</div>
+                                <div class="stat-value">Just starting. Nothing deployed yet. Building the foundation at basecamp.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -939,7 +961,7 @@
                 
                 <div class="basecamp-grid">
                     <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/0acb85cd-ece2-4463-ba27-8f2f9ec90bc9" alt="Basecamp at night" class="basecamp-image">
+                        <img src="https://github.com/user-attachments/assets/cd0b8d06-3bba-441e-816a-bd606ad1a1fb" alt="Basecamp at night" class="basecamp-image">
                         <div class="basecamp-content">
                             <h3 class="basecamp-title" style="color: var(--accent-gold);">Night Mode</h3>
                             <p class="basecamp-description">This is when we roll. When the real work happens. Building, testing, deploying. The grind. No distractions, just focus and code.</p>
@@ -947,7 +969,7 @@
                     </div>
                     
                     <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/d8e9af26-558d-4444-aa53-d7d8fce595bb" alt="Basecamp during day" class="basecamp-image">
+                        <img src="https://github.com/user-attachments/assets/0acb85cd-ece2-4463-ba27-8f2f9ec90bc9" alt="Basecamp during day" class="basecamp-image">
                         <div class="basecamp-content">
                             <h3 class="basecamp-title" style="color: var(--accent-cyan);">Day Mode</h3>
                             <p class="basecamp-description">The calm before the storm. Planning. Learning. Getting ready for the night session. Research, strategy, prep.</p>
@@ -963,10 +985,10 @@
                     </div>
                     
                     <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/5725e960-790f-42dc-b492-e7c1f52d9b82" alt="Sunrise" class="basecamp-image">
+                        <img src="https://github.com/user-attachments/assets/5725e960-790f-42dc-b492-e7c1f52d9b82" alt="Sunset" class="basecamp-image">
                         <div class="basecamp-content">
-                            <h3 class="basecamp-title" style="color: var(--accent-red);">Sunrise</h3>
-                            <p class="basecamp-description">After a long night of building. Watching it come up. Reset. Do it again. The cycle continues.</p>
+                            <h3 class="basecamp-title" style="color: var(--accent-red);">Sunset</h3>
+                            <p class="basecamp-description">Technically sunset. Already done with the day's work, heading into night mode. The cycle continues.</p>
                         </div>
                     </div>
                 </div>
