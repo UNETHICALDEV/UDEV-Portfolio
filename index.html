@@ -10,12 +10,12 @@
     <meta name="description" content="Solana developer building in the open. No hype, just code.">
     <meta property="og:title" content="Unethical Dev | Solana Developer">
     <meta property="og:description" content="Building on Solana. Deploying on Pump.fun. No BS, just shipping.">
-    <meta property="og:image" content="https://github.com/user-attachments/assets/7d58c6c6-51c4-4100-b195-42e4fe06ec95">
+    <meta property="og:image" content="https://github.com/user-attachments/assets/7d58c6c6-51c4-4100-a995-42e4fe06ec95">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@unethicaldev">
     <meta name="twitter:title" content="Unethical Dev | Solana Developer">
     <meta name="twitter:description" content="Building on Solana. Deploying on Pump.fun. No BS, just shipping.">
-    <meta name="twitter:image" content="https://github.com/user-attachments/assets/7d58c6c6-51c4-4100-b195-42e4fe06ec95">
+    <meta name="twitter:image" content="https://github.com/user-attachments/assets/7d58c6c6-51c4-4100-a995-42e4fe06ec95">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +90,10 @@
             opacity: 0.15;
             animation: float 20s infinite ease-in-out;
             will-change: transform;
+            transform: translate(
+                calc(var(--parallax-x, 0px)),
+                calc(var(--parallax-y, 0px))
+            );
         }
 
         .orb-1 {
@@ -104,7 +108,7 @@
         .orb-2 {
             width: 400px;
             height: 400px;
-            background: var(--accent-tan);
+            background: var(--accent-gold);
             bottom: -100px;
             right: -100px;
             animation-delay: 7s;
@@ -350,7 +354,7 @@
         .why-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 24px;
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -412,7 +416,7 @@
         }
 
         .highlight {
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             font-weight: 600;
         }
 
@@ -463,7 +467,7 @@
 
         .address-label {
             font-family: 'JetBrains Mono', monospace;
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             font-size: 12px;
             margin-bottom: 10px;
             text-transform: uppercase;
@@ -608,7 +612,7 @@
 
         .skill-category h3 {
             font-family: 'Orbitron', sans-serif;
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             font-size: 20px;
             margin-bottom: 25px;
             text-transform: uppercase;
@@ -629,7 +633,7 @@
         }
 
         .skill-list li:hover {
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             padding-left: 30px;
         }
 
@@ -660,7 +664,7 @@
         }
 
         .footer-text a {
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             text-decoration: none;
             transition: all 0.3s ease;
         }
@@ -744,6 +748,21 @@
             scroll-behavior: smooth;
         }
 
+        section {
+            scroll-margin-top: 110px;
+        }
+
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+            html {
+                scroll-behavior: auto !important;
+            }
+        }
+
         /* Scroll to Top Button */
         .scroll-top {
             position: fixed;
@@ -775,7 +794,7 @@
 
         .scroll-top:hover {
             background: var(--bg-dark);
-            color: var(--accent-tan);
+            color: var(--accent-gold);
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
         }
@@ -798,7 +817,7 @@
         }
 
         .copy-btn:hover {
-            background: var(--accent-tan);
+            background: var(--accent-gold);
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
             transform: translateY(-2px);
         }
@@ -831,7 +850,7 @@
                     <a href="#about">About</a>
                     <a href="#basecamp">Basecamp</a>
                     <a href="#projects">Projects</a>
-                    <a href="https://x.com/unethicaldev" target="_blank">X</a>
+                    <a href="https://x.com/unethicaldev" target="_blank" rel="noopener noreferrer">X</a>
                 </nav>
             </div>
         </div>
@@ -860,10 +879,19 @@
                     <div class="about-left">
                         <img src="https://github.com/user-attachments/assets/7d58c6c6-51c4-4100-a995-42e4fe06ec95" alt="Unethical Dev Logo" class="about-logo">
                         
-                        <div class="solana-address">
-                            <div class="address-label">Solana Address</div>
+                        <div class="solana-address" onclick="copyAddress()" style="cursor: pointer; transition: all 0.3s ease;">
+                            <div class="address-label">Solana Address (Click to Copy)</div>
                             <div class="address-value" id="solana-addr">ApS6Rz8osY5JWovvu29NseEUtXF99oZkvQHaBPHXPz3L</div>
-                            <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+                        </div>
+
+                        <div style="margin-top: 20px;">
+                            <div style="font-family: 'Orbitron', sans-serif; color: var(--accent-red); font-size: 14px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">Deploy On</div>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <a href="https://pump.fun" target="_blank" rel="noopener noreferrer" class="deploy-link" style="padding: 12px 20px; background: rgba(252, 88, 73, 0.1); border: 1px solid var(--accent-red); color: var(--accent-red); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: center; transition: all 0.3s ease; border-radius: 6px;">PUMP.FUN</a>
+                                <a href="https://www.defined.fi" target="_blank" rel="noopener noreferrer" class="deploy-link" style="padding: 12px 20px; background: rgba(249, 199, 117, 0.1); border: 1px solid var(--accent-gold); color: var(--accent-gold); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: center; transition: all 0.3s ease; border-radius: 6px;">DEFINED</a>
+                                <a href="https://jup.ag" target="_blank" rel="noopener noreferrer" class="deploy-link" style="padding: 12px 20px; background: rgba(110, 48, 157, 0.1); border: 1px solid var(--accent-purple); color: var(--accent-purple); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: center; transition: all 0.3s ease; border-radius: 6px;">JUPITER</a>
+                                <a href="https://raydium.io" target="_blank" rel="noopener noreferrer" class="deploy-link" style="padding: 12px 20px; background: rgba(0, 217, 255, 0.1); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; text-align: center; transition: all 0.3s ease; border-radius: 6px;">RAYDIUM</a>
+                            </div>
                         </div>
                     </div>
 
@@ -961,7 +989,7 @@
                 
                 <div class="basecamp-grid">
                     <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/cd0b8d06-3bba-441e-816a-bd606ad1a1fb" alt="Basecamp at night" class="basecamp-image">
+                        <img src="https://github.com/user-attachments/assets/cd0b8d06-3bba-441e-816a-bd606ad1a1fb" alt="Basecamp at night" class="basecamp-image" loading="lazy" decoding="async">
                         <div class="basecamp-content">
                             <h3 class="basecamp-title" style="color: var(--accent-gold);">Night Mode</h3>
                             <p class="basecamp-description">This is when we roll. When the real work happens. Building, testing, deploying. The grind. No distractions, just focus and code.</p>
@@ -969,15 +997,7 @@
                     </div>
                     
                     <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/0acb85cd-ece2-4463-ba27-8f2f9ec90bc9" alt="Basecamp during day" class="basecamp-image">
-                        <div class="basecamp-content">
-                            <h3 class="basecamp-title" style="color: var(--accent-cyan);">Day Mode</h3>
-                            <p class="basecamp-description">The calm before the storm. Planning. Learning. Getting ready for the night session. Research, strategy, prep.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/0a0e5194-ee1a-4a28-8e84-a0cceeac8218" alt="Cooking" class="basecamp-image">
+                        <img src="https://github.com/user-attachments/assets/0a0e5194-ee1a-4a28-8e84-a0cceeac8218" alt="Cooking" class="basecamp-image" loading="lazy" decoding="async">
                         <div class="basecamp-content">
                             <h3 class="basecamp-title" style="color: var(--accent-purple);">Cooking</h3>
                             <p class="basecamp-description">This is the process. Sometimes it looks crazy. Most of the time it is. But this is where ideas become reality.</p>
@@ -985,7 +1005,15 @@
                     </div>
                     
                     <div class="basecamp-card">
-                        <img src="https://github.com/user-attachments/assets/5725e960-790f-42dc-b492-e7c1f52d9b82" alt="Sunset" class="basecamp-image">
+                        <img src="https://github.com/user-attachments/assets/0acb85cd-ece2-4463-ba27-8f2f9ec90bc9" alt="Basecamp during day" class="basecamp-image" loading="lazy" decoding="async">
+                        <div class="basecamp-content">
+                            <h3 class="basecamp-title" style="color: var(--accent-cyan);">Day Mode</h3>
+                            <p class="basecamp-description">The calm before the storm. Planning. Learning. Getting ready for the night session. Research, strategy, prep.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="basecamp-card">
+                        <img src="https://github.com/user-attachments/assets/5725e960-790f-42dc-b492-e7c1f52d9b82" alt="Sunset" class="basecamp-image" loading="lazy" decoding="async">
                         <div class="basecamp-content">
                             <h3 class="basecamp-title" style="color: var(--accent-red);">Sunset</h3>
                             <p class="basecamp-description">Technically sunset. Already done with the day's work, heading into night mode. The cycle continues.</p>
@@ -1079,19 +1107,70 @@
         // Copy Solana Address
         function copyAddress() {
             const addr = document.getElementById('solana-addr').textContent;
+            const addressBox = document.querySelector('.solana-address');
+            
+            // Check if clipboard is available
+            if (!navigator.clipboard) {
+                // Fallback for non-https or unsupported browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = addr;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopySuccess(addressBox);
+                } catch (err) {
+                    console.error('Fallback copy failed:', err);
+                }
+                document.body.removeChild(textArea);
+                return;
+            }
+            
             navigator.clipboard.writeText(addr).then(() => {
-                const btn = event.target;
-                const originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                btn.style.background = 'var(--accent-tan)';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = 'var(--accent-purple)';
-                }, 2000);
+                showCopySuccess(addressBox);
             }).catch(err => {
-                alert('Failed to copy address');
+                console.error('Failed to copy:', err);
             });
         }
+
+        function showCopySuccess(addressBox) {
+            addressBox.style.borderColor = '#00ff41';
+            addressBox.style.background = 'rgba(0, 255, 65, 0.15)';
+            
+            const label = addressBox.querySelector('.address-label');
+            const originalText = label.textContent;
+            label.textContent = '✓ COPIED!';
+            label.style.color = '#00ff41';
+            
+            setTimeout(() => {
+                addressBox.style.borderColor = 'var(--accent-gold)';
+                addressBox.style.background = 'rgba(249, 199, 117, 0.05)';
+                label.textContent = originalText;
+                label.style.color = 'var(--accent-gold)';
+            }, 2000);
+        }
+
+        // Add hover effects to deployment platform links
+        document.addEventListener('DOMContentLoaded', () => {
+            const deployLinks = document.querySelectorAll('.deploy-link');
+            deployLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px)';
+                    // Get computed color properly
+                    const computedStyle = getComputedStyle(this);
+                    const borderColor = computedStyle.borderColor;
+                    // Parse RGB and add alpha
+                    const rgb = borderColor.match(/\d+/g);
+                    if (rgb && rgb.length >= 3) {
+                        this.style.boxShadow = `0 0 20px rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, 0.4)`;
+                    }
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
 
         // Scroll to Top
         function scrollToTop() {
@@ -1133,17 +1212,22 @@
             observer.observe(el);
         });
 
-        // Add parallax effect to orbs on mouse move
+        // Add parallax effect to orbs on mouse move (using CSS variables to preserve animation)
         document.addEventListener('mousemove', (e) => {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            
             const orbs = document.querySelectorAll('.orb');
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
             
             orbs.forEach((orb, index) => {
-                const speed = (index + 1) * 50;
+                const speed = (index + 1) * 30;
                 const xOffset = (x - 0.5) * speed;
                 const yOffset = (y - 0.5) * speed;
-                orb.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+                
+                // Use CSS custom properties instead of directly setting transform
+                orb.style.setProperty('--parallax-x', `${xOffset}px`);
+                orb.style.setProperty('--parallax-y', `${yOffset}px`);
             });
         });
     </script>
