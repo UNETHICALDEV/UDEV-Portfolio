@@ -1319,7 +1319,7 @@
                         </div>
                         <h3 class="project-card-title">NEW YEAR SAME ME(ME)</h3>
                         <p class="project-card-desc">Honest narrative for New Year's. No reinvention. No lies. Just accountability. Launching on Pump.fun.</p>
-                        <div class="project-status-badge">COMING SOON</div>
+                        <div class="project-status-badge" style="background: rgba(0, 255, 65, 0.15); border-color: #00ff41; color: #00ff41;">LIVE NOW</div>
                     </div>
                 </div>
 
@@ -1341,7 +1341,7 @@
                 <span class="modal-close" onclick="closeProjectModal()">&times;</span>
                 
                 <div class="modal-header">
-                    <div class="modal-badge">LAUNCHING SOON</div>
+                    <div class="modal-badge" style="background: #00ff41; color: var(--bg-dark);">LIVE NOW</div>
                     <div class="modal-date">New Year's Eve 2025</div>
                 </div>
                 
@@ -1361,11 +1361,14 @@
                             </div>
                             <div class="modal-info-row">
                                 <span class="modal-label">CA Address</span>
-                                <span class="modal-value">Coming Soon</span>
+                                <span class="modal-value" style="font-size: 11px; word-break: break-all;" id="ca-address">AV3QH2VTzpx3XtAdKJ911shch5wu5ggt9k9nmqDKpump</span>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <button onclick="copyCA()" style="padding: 10px 20px; background: var(--accent-purple); color: var(--bg-dark); border: none; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">Copy CA</button>
                             </div>
                             <div class="modal-info-row">
                                 <span class="modal-label">Status</span>
-                                <span class="modal-value" style="color: var(--accent-red);">Building</span>
+                                <span class="modal-value" style="color: #00ff41;">LIVE</span>
                             </div>
                         </div>
 
@@ -1592,6 +1595,44 @@
                 modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
+        }
+
+        // Copy CA function
+        function copyCA() {
+            const ca = document.getElementById('ca-address').textContent;
+            const button = event.target;
+            
+            if (!navigator.clipboard) {
+                const textArea = document.createElement('textarea');
+                textArea.value = ca;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopySuccess(button);
+                } catch (err) {
+                    console.error('Fallback copy failed:', err);
+                }
+                document.body.removeChild(textArea);
+                return;
+            }
+            
+            navigator.clipboard.writeText(ca).then(() => {
+                showCopySuccess(button);
+            }).catch(err => {
+                console.error('Failed to copy CA:', err);
+            });
+        }
+
+        function showCopySuccess(button) {
+            const originalText = button.textContent;
+            button.textContent = '✓ COPIED!';
+            button.style.background = '#00ff41';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = 'var(--accent-purple)';
+            }, 2000);
         }
 
         // Close modal on Escape key
