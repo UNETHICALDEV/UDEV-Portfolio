@@ -277,6 +277,88 @@
             background: linear-gradient(180deg, transparent, rgba(0, 255, 65, 0.02), transparent);
         }
 
+        /* Why Section */
+        .why-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, rgba(0, 255, 65, 0.02), transparent, rgba(0, 217, 255, 0.02));
+        }
+
+        .why-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .why-intro p {
+            font-size: 28px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            background: rgba(13, 13, 18, 0.8);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .why-card:hover::before {
+            left: 100%;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-green);
+            box-shadow: 0 20px 60px rgba(0, 255, 65, 0.2);
+        }
+
+        .why-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+            transition: all 0.4s ease;
+        }
+
+        .why-card:hover .why-icon {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .why-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            color: var(--accent-green);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .why-description {
+            color: var(--text-dim);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
         .section-title {
             font-family: 'Orbitron', sans-serif;
             font-size: clamp(36px, 6vw, 64px);
@@ -789,6 +871,53 @@
             </div>
         </section>
 
+        <!-- Why Me Section -->
+        <section class="why-section">
+            <div class="container">
+                <h2 class="section-title">Why Different</h2>
+                <div class="why-intro">
+                    <p>I do what other devs don't.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">💰</div>
+                        <h3 class="why-title">We Pay DEX</h3>
+                        <p class="why-description">Listing fees, market making, proper liquidity. No shortcuts. If we launch, we do it right.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">🔥</div>
+                        <h3 class="why-title">We Burn</h3>
+                        <p class="why-description">Supply burns when promised. Not "eventually." Not "maybe." When we say burn, tokens disappear.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">🔒</div>
+                        <h3 class="why-title">We Lock Liquidity</h3>
+                        <p class="why-description">LP tokens locked, provable on-chain. No rug pulls. No midnight exits. Locked means locked.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">📊</div>
+                        <h3 class="why-title">Transparent Operations</h3>
+                        <p class="why-description">Everything verifiable. Contract addresses public. Transactions on-chain. No hidden wallets.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">⚡</div>
+                        <h3 class="why-title">Ship Fast</h3>
+                        <p class="why-description">No endless roadmaps. Build, test, deploy. Market decides if it lives or dies. Move on.</p>
+                    </div>
+
+                    <div class="why-card">
+                        <div class="why-icon">🎯</div>
+                        <h3 class="why-title">No Fake Promises</h3>
+                        <p class="why-description">Not promising moon. Not guaranteeing returns. Just building and letting code speak.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Basecamp Section -->
         <section class="basecamp-section" id="basecamp">
             <div class="container">
@@ -964,7 +1093,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.basecamp-card, .skill-category, .stat-item').forEach(el => {
+        document.querySelectorAll('.basecamp-card, .skill-category, .stat-item, .why-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
