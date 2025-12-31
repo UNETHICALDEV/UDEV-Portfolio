@@ -557,6 +557,171 @@
             padding: 80px 0;
         }
 
+        .project-featured {
+            background: linear-gradient(135deg, rgba(13, 13, 18, 0.9), rgba(5, 5, 8, 0.95));
+            border: 2px solid var(--accent-gold);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(249, 199, 117, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: rgba(249, 199, 117, 0.05);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-badge {
+            padding: 8px 20px;
+            background: var(--accent-red);
+            color: var(--bg-dark);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            border-radius: 6px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .project-date {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-gold);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .project-main {
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .project-image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 10px 40px rgba(110, 48, 157, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.05);
+        }
+
+        .project-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project-ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--accent-red);
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(252, 88, 73, 0.5);
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(249, 199, 117, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .info-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .project-narrative {
+            padding: 25px;
+            background: rgba(252, 88, 73, 0.05);
+            border-left: 3px solid var(--accent-red);
+            border-radius: 8px;
+        }
+
+        .narrative-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .project-narrative p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .narrative-highlight {
+            color: var(--accent-gold) !important;
+            font-weight: 600;
+            font-size: 16px !important;
+        }
+
+        .narrative-final {
+            color: var(--accent-red) !important;
+            font-weight: 700;
+            font-size: 16px !important;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .project-main {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image-container {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
         .projects-empty {
             text-align: center;
             padding: 100px 40px;
@@ -1036,11 +1201,57 @@
         <section class="projects-section" id="projects">
             <div class="container">
                 <h2 class="section-title">Projects</h2>
-                <div class="projects-empty">
-                    <div class="projects-empty-title">NOTHING YET</div>
+                
+                <!-- First Project - NYSM -->
+                <div class="project-featured">
+                    <div class="project-header">
+                        <div class="project-badge">LAUNCHING SOON</div>
+                        <div class="project-date">New Year's Eve 2025</div>
+                    </div>
+                    
+                    <div class="project-main">
+                        <div class="project-image-container">
+                            <img src="https://github.com/user-attachments/assets/9ee86113-ff38-456f-a298-11ac310d64f9" alt="New Year Same Meme" class="project-image" loading="lazy" decoding="async">
+                        </div>
+                        
+                        <div class="project-details">
+                            <h3 class="project-title">NEW YEAR SAME ME(ME)</h3>
+                            <div class="project-ticker">$NYSM</div>
+                            
+                            <div class="project-info">
+                                <div class="info-row">
+                                    <span class="info-label">Platform</span>
+                                    <span class="info-value">Pump.fun</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">CA Address</span>
+                                    <span class="info-value">Coming Soon</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Status</span>
+                                    <span class="info-value" style="color: var(--accent-red);">Building</span>
+                                </div>
+                            </div>
+
+                            <div class="project-narrative">
+                                <div class="narrative-title">The Narrative</div>
+                                <p>Lately a "new year same me(me)" trend has been going viral on TikTok. 10M+ views of people promising change.</p>
+                                <p>Every January it's the same thing. New habits. New discipline. New life.</p>
+                                <p>And by February nothing's different. Just better excuses.</p>
+                                <p class="narrative-highlight">This isn't about reinventing yourself. It's about not lying to yourself.</p>
+                                <p>In a world where everyone overpromises and underdelivers, I'm saying it plainly: <strong>New Year, Same Me.</strong></p>
+                                <p>Same goals. Same work. Same accountability.</p>
+                                <p class="narrative-final">New Year's Eve is today. Why wouldn't the honest narrative run now?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Message -->
+                <div class="projects-empty" style="margin-top: 60px;">
+                    <div class="projects-empty-title">MORE COMING</div>
                     <p class="projects-empty-text">
-                        I'm gonna start deploying stuff openly and let the market decide.<br>
-                        First few might not even run. That's fine.<br><br>
+                        One drop a week, maybe two.<br>
                         You'll know when it's mine.<br><br>
                         Watch this space. Or follow on <a href="https://x.com/unethicaldev" style="color: var(--accent-gold); text-decoration: none;">X</a>.
                     </p>
